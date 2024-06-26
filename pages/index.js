@@ -12,7 +12,7 @@ export default function HomePage() {
   const [bal, setBal] = useState();
   const [val, setVal] = useState();
 
-  const contractAddress = "0x93f641b32a580e5CeEe66412771f54aC52d51763";
+  const contractAddress = "0xc50f62aDEcAC6c5Cdb998508479Ad40ec1378Ab1";
   const atmABI = atm_abi.abi;
 
   const getWallet = async () => {
@@ -148,14 +148,36 @@ export default function HomePage() {
       {initUser()}
       <style jsx>
         {`
+          body {
+            height: 100vh;
+            background-color: black;
+          }
           .container {
             text-align: center;
+            border: 5px solid blue;
+            background-color: #ebf4f6;
+          }
+          button {
+            background-color: #088395;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin: 5px;
           }
         `}
       </style>
-      <button onClick={getAddress}>Show Address</button>
-      <button onClick={getOwner}>Show Owner</button>
-      <button onClick={showBalance}>Show Contract Balance</button>
+
+      <div>
+        <button onClick={getAddress}>Show Address</button>
+      </div>
+
+      <div>
+        <button onClick={getOwner}>Show Owner</button>
+      </div>
+
+      <div>
+        <button onClick={showBalance}>Show Contract Balance</button>
+      </div>
+
       <lable>Enter the Amount</lable>
       <input
         placeholder="Enter the amount"
